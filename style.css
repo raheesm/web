@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* list-style: none; */
+    /* text-decoration: none; */
+}
+.navbar nav ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2em;
+    padding: 0 20px;
+}
+.navbar nav ul ul{
+    display: block;
+}
+.nav_listlogo{
+    float: left;
+    margin-right: auto;
+}
+.nav_listlogo svg{
+    width: 2.5rem;
+}
+.nav_listitem{
+    position: relative;
+}
+.nav_listitemdrop{
+    position: absolute;
+    top: 2rem;
+    left: -1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+.nav_listitemdrop li{
+    list-style: none;
+    padding: 0.5rem 1rem;
+}
