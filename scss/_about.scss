@@ -1,0 +1,26 @@
+.about{
+    background-color: $primary;
+    height: 100vh;
+    color: #fff;
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    &__div{
+        text-align: center;
+        h1{
+            font-size: 4rem;
+            font-family: $pm-font;
+            margin-bottom: 0;
+        }
+        p{
+            font-size: 1.2rem;
+            font-family: $sec-font;
+        }
+    }
+}

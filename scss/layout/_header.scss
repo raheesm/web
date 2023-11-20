@@ -1,0 +1,24 @@
+.header{
+
+    .main-nav{
+        padding: 1em 0;
+        display: flex;
+        justify-content: space-between;
+       &__list{
+        display: none;
+        gap: 2em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        @include breakpoint-up(large){
+            display: flex;
+        }
+        li{
+            a{
+                text-decoration: none;
+                color: $primary;
+            }
+        }
+       }
+    }
+}

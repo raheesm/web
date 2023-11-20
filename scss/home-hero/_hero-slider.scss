@@ -1,0 +1,61 @@
+.hero{
+    background-color: black;
+    &__div{
+        .hero-slider{
+            .splide{
+                &__slide{
+                    height: 100%;
+                    width: auto;
+                    @include breakpoint-up(large){
+                        height: 100vh;
+                    }
+                }
+            }
+        }
+    }
+    &__slide{
+        height: auto;
+        text-align:left;
+        padding: 2em 0;
+        gap: 1em;
+        width: 80vw;
+        @extend .container;
+        @include breakpoint-up(medium){
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+        h2{
+            color: #fff;
+            font-size: 2rem;
+            font-weight: normal;
+            text-align: left;
+        }
+        p{
+            color: #fff;
+            max-width: 80vh;
+            margin-bottom: 2em;
+        }
+        &__img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            .img-box{
+                border-radius: 50%;
+                overflow: hidden;
+                img{
+                    width: 5em;
+                    height: 5em;
+                    @include breakpoint-up(medium){
+                        height: 25em;
+                        width: 25em;
+                    }
+                }
+            }
+        }
+        &__content{
+            flex: 1;
+        }
+    }
+}
