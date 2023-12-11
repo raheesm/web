@@ -175,3 +175,22 @@
       }
       
 }
+
+.rahees{
+    &__div{
+        perspective: 1500;
+        display: flex;
+        justify-content: space-between;
+        .box{
+            background-color: goldenrod;
+            width: 20vw;
+            height: 20vw;
+            transform: rotateY(20deg) rotateX(10deg) rotateZ(5deg);
+            box-shadow: $pm-shadow;
+            transition: 300ms all ease-in-out;
+            &:hover{
+                transform:none;
+            }
+        }
+    }
+}

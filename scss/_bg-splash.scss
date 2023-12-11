@@ -5,6 +5,7 @@
     background-size: cover;
     background-image: url(https://picsum.photos/id/1/1000/600);
     z-index: 1;
+    margin-bottom: 4em;
     &::before{
         position: absolute;
         content: "";
@@ -21,13 +22,15 @@
     }
     .content-box{
         position: absolute;
-        top: 50%;
+        bottom: -30%;
         left: 50%;
-        width: 50%;
-        height: 10vw;
-        z-index: 999;
-        background-color: rgb(87, 241, 15);
-        padding: 1em;
-        color: #fff;
+        transform: translateX(-50%);
+        max-width: 50vw;
+        min-height: 20vw;
+        margin: 0 auto;
+    //     width: 50%;
+    //     height: 10vw;
+    //     z-index: 999;
+    //     padding: 1em;
     }
 }
