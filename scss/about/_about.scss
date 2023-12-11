@@ -1,0 +1,37 @@
+.abt-section{
+    overflow: scroll;
+    height: 100vh;
+    // scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    section {
+        
+        scroll-snap-align: end;
+        height: 100vh;
+        h2{
+          font-size: 7rem;
+          color: lightgray;
+        }
+        &:nth-child(1){
+          background-color: #143979;
+        }
+        &:nth-child(2){
+          background-color: antiquewhite;
+        }
+        &:nth-child(3){
+          background-color: aqua;
+        }
+        &:nth-child(4){
+          background-color: aquamarine;
+        }
+        &:nth-child(5){
+          background-color: azure;
+        }
+        &:nth-child(6){
+          background-color: bisque;
+        }
+      }
+}

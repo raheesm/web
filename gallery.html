@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.9/dist/css/splide.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/css/lightgallery.css" />
+ 
+  <link rel="stylesheet" href="assets/css/main.min.css">
+
+  <style>
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .img-box {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: auto;
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: auto;
+      border: 5px solid #fff;
+      box-shadow: 0 0 25px #000;
+    }
+  
+  </style>
+</head>
+
+<body>
+  <header class="header bg-lite">
+    <div class="container">
+      <nav class="main-nav">
+        <div class="header-logo"><a href="#">LOGO</a></div>
+        <ul class="main-nav__list">
+          <li class="nav-link">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="about.html">About</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Blog</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Careers</a>
+          </li>
+          <li class="nav-link">
+            <a href="gallery.html">Gallery</a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <br>
+    <h2>Javascript Image Filter</h2>
+
+   <!-- Gallery Type 1 -->
+
+   <section class="gallery">
+    <div class="container">
+      <div class="buttons">
+        <button type="button" class="active-btn">All</button>
+        <button type="button" data-btn="bmw">BMW</button>
+        <button type="button" data-btn="benz">Benz</button>
+        <button type="button" data-btn="audi">Audi</button>
+        <button type="button" data-btn="rover">RangeRover</button>
+        <button type="button" data-btn="rolls">RollsRoys</button>
+      </div>
+      <div class="gallery__grid">
+        <div class="img-box" data-img="bmw">
+          <img onclick="openLightbox('https://picsum.photos/id/22/367/267')" src="https://picsum.photos/id/22/367/267" alt="">
+        </div>
+        <div class="img-box" data-img="benz">
+          <img onclick="openLightbox('https://picsum.photos/id/23/367/267')" src="https://picsum.photos/id/23/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="audi">
+          <img onclick="openLightbox('https://picsum.photos/id/3/367/267')" src="https://picsum.photos/id/24/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="rover">
+          <img onclick="openLightbox('https://picsum.photos/id/24/367/267')" src="https://picsum.photos/id/25/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="rolls">
+          <img onclick="openLightbox('https://picsum.photos/id/26/367/267')" src="https://picsum.photos/id/26/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="bmw">
+          <img onclick="openLightbox('https://picsum.photos/id/27/367/267')" src="https://picsum.photos/id/27/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="benz">
+          <img onclick="openLightbox('https://picsum.photos/id/28/367/267')" src="https://picsum.photos/id/28/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="rolls">
+          <img onclick="openLightbox('https://picsum.photos/id/29/367/267')" src="https://picsum.photos/id/29/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="audi">
+          <img onclick="openLightbox('https://picsum.photos/id/30/367/267')" src="https://picsum.photos/id/30/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="audi">
+          <img onclick="openLightbox('https://picsum.photos/id/31/367/267')" src="https://picsum.photos/id/31/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="audi">
+          <img src="https://picsum.photos/id/32/367/267"  alt="">
+        </div>
+        <div class="img-box" data-img="audi">
+          <img onclick="openLightbox('https://picsum.photos/id/3/367/267')" src="https://picsum.photos/id/33/367/267"  alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div id="lightbox">
+    <img id="lightbox-img" src="" alt="Lightbox Image">
+  </div>
+  
+  <script>
+    let lightbox = document.getElementById('lightbox');
+    lightboxImg = document.getElementById('lightbox-img');
+
+    const openLightbox = (imagePath) =>{
+     lightboxImg.src = imagePath;
+     lightbox.style.display='flex';
+    }
+
+    lightbox.addEventListener('click',()=>{
+     lightbox.style.display='none'
+    })
+ </script>
+ 
+ <script>
+  let btns = document.querySelectorAll('.buttons button');
+  let imgBox = document.querySelectorAll('.gallery__grid .img-box');
+
+  const setActiveBtn = (e) => {
+    btns.forEach((btn) => {
+      btn.classList.remove('active-btn');
+    });
+    e.target.classList.add('active-btn');
+  };
+
+  const filterEl = (e) => {
+    setActiveBtn(e);
+    imgBox.forEach((box) => {
+      box.classList.remove('hide-card');
+      box.classList.add('show-card');
+
+      const boxData = box.dataset.img;
+      const btnData = e.target.dataset.btn;
+
+      if (boxData !== btnData) {
+        box.classList.remove('show-card');
+        box.classList.add('hide-card');
+      }
+    });
+  };
+
+  btns.forEach((btn) => {
+    btn.addEventListener('click', filterEl);
+  });
+
+  btns[0].addEventListener('click', (e) => {
+    setActiveBtn(e);
+    imgBox.forEach((boxItem) => {
+      boxItem.classList.remove('hide-card');
+      boxItem.classList.add('show-card');
+    });
+  });
+
+</script>
+
+  
+  
+  <!-- Gallery Type 1 end -->
+<br><br><br>
+
+  <!-- Gallery with LiteGallery.js -->
+
+  <section class="lite-gallery bg-lite">
+    <div class="container">
+      <h2>LightGallery Js</h2>
+      <div class="lite-gallery__div">
+        <div id="lit-gallery">
+          <a href="https://picsum.photos/id/1/1000/600" data-lg-size="1600-2400">
+            <img alt="img1" src="https://picsum.photos/id/1/250/150" />
+        </a>
+          <a href="https://picsum.photos/id/2/1000/600" data-lg-size="1600-2400">
+            <img alt="img1" src="https://picsum.photos/id/2/250/150" />
+        </a>
+          <a href="https://picsum.photos/id/3/1000/600" data-lg-size="1600-2400">
+            <img alt="img1" src="https://picsum.photos/id/3/250/150" />
+        </a>
+          <a href="https://picsum.photos/id/4/1000/600" data-lg-size="1600-2400">
+            <img alt="img1" src="https://picsum.photos/id/4/250/150" />
+        </a>
+          <a href="https://picsum.photos/id/5/1000/600" data-lg-size="1600-2400">
+            <img alt="img1" src="https://picsum.photos/id/5/250/150" />
+        </a>
+          <a href="https://picsum.photos/id/6/1000/600" data-lg-size="1600-2400">
+            <img alt="img1" src="https://picsum.photos/id/6/250/150" />
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery with LiteGallery.js end -->
+
+  </main>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js" ></script>
+  <!-- <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/light-box.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/@splidejs/splide@3.0.9/dist/js/splide.min.js"></script> -->
+
+
+  <script>
+    let gallery = document.getElementById('lit-gallery')
+    lightGallery(gallery,{
+      controls:true,
+      download:false,
+    })
+  </script>
+  
+</body>
+
+</html>

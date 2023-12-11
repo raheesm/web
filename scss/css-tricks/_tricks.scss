@@ -1,0 +1,177 @@
+.css-tricks{
+    background-color: aliceblue;
+    padding: 2em;
+    .container{
+        @extend .flex-center-column;
+    }
+    .frame{
+        height: 300px;
+        width: 300px;
+        border: 1px solid rebeccapurple;
+        background-color: black;
+        perspective: 300px;
+        overflow: hidden;
+        .content{
+            text-align: center;
+            padding-top: 10em;
+            position: absolute;
+            width: 100%;
+            z-index: -1;
+            h4{
+                text-align: center;
+                color: yellowgreen;
+                font-size: 1.2rem;
+            }
+        }
+        .shape{
+            height: 300px;
+            width: 300px;
+            background-color: red; 
+            border: 1px solid black;
+            // transform: rotateX(185deg);
+            box-shadow: $pm-shadow;
+            transition: all 3s ease;
+            transform-origin:top ;
+            h2{
+                font-size: 1rem;
+                font-weight: bold;
+                padding-top: 10em;
+            }
+        }
+        &:hover{
+           .shape{
+            transform: rotateX(-180deg);
+           }
+        }
+    }
+    // aspect-ratio************
+}
+.player{
+    width: 50%;
+    background-color: #000;
+    aspect-ratio: 16/9;
+}
+
+.pr-parant{
+    position: relative;
+    transition: $pm-transition;
+    min-height: 70vh;
+    &>div{
+    transition: $pm-transition;
+
+    }
+    h3{
+        background-color: #fff;
+    }
+    .pr-fig1{
+        perspective: 1500px;
+        position: absolute;
+        width:"fit-content";
+        top: 0;
+        z-index: 0;
+        transition: 3s all ease;
+        img{
+            transform: rotateX(10deg) rotateY(-18deg) rotateZ(3deg);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            transition: 3s all ease;
+        }
+        &:hover{
+            img{
+                transform: none;
+            }
+        }
+    }
+    .pr-fig2{
+        position: absolute;
+        perspective: 1500px;
+        z-index: 2;
+        top: 0;
+        width:"fit-content";
+        transition: 3s all ease;
+        img{
+            filter: blur(1px);
+            transition: 3s all ease;
+            transform: rotateX(10deg) rotateY(-18deg) rotateZ(3deg);
+        }
+        &:hover{
+            cursor: pointer;
+            z-index: 4;
+            img{
+                transform: translateX(500px);
+            }
+        }
+    }
+    .pr-fig3{
+        position: absolute;
+        perspective: 1500px;
+        top: 0;
+        z-index: 3;
+        width:"fit-content";
+        transition: 3s all ease;
+        img{
+            transition: 3s all ease;
+            transform: rotateX(10deg) rotateY(-18deg) rotateZ(3deg);
+        }
+        
+    }
+    &:hover{
+        
+        .pr-fig1{
+            transform: translateX(410px);
+            z-index: 2;
+        }
+        .pr-fig2{
+            transform: translateX(-410px);
+            z-index: 3;
+        }
+        .pr-fig1{
+        //    right: 10px;
+        }
+        img{
+            transform: none;
+        }
+    }
+}
+
+.btn-pr{
+    .button-group {
+        cursor: pointer;
+        display: inline-flex;
+        perspective: 200px; 
+        perspective-origin: calc(100% - 53px);
+        &:hover{
+            .icon {
+                transform: rotateY(0deg);
+              }
+        }
+      }
+      
+      .text {
+        background: black;
+        color: white;
+        text-transform: uppercase;
+        font-size: 16px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 25px;
+        letter-spacing: 3px;
+      }
+      
+      .icon {
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        line-height: 42px;
+        box-sizing: border-box;
+        border: 4px solid black;
+        border-left: none;
+        transition: 400ms transform ease-in-out;
+        transform: rotateY(90deg);
+        transform-origin: left;
+      }
+      
+      .button-group:hover .icon {
+        transform: rotateY(0deg);
+      }
+      
+}
